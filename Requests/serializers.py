@@ -4,4 +4,4 @@ from .models import Request
 class RequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Request
-        fields = ['id', 'PlayerID', 'PaymentMethod', 'Amount', 'Time']
+        fields = ['id', 'DateTime', 'PlayerID', 'AccountTitle', 'AccountNumber', 'PaymentMethod', 'Amount', 'Status']

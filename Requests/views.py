@@ -8,7 +8,6 @@ from .serializers import RequestSerializer
 class RequestView(APIView):
     def get(self, request):
         # Handle GET request: Retrieve all requestls
-        print("I'm in")
         request = Request.objects.all()
         serializer = RequestSerializer(request, many=True)
         return Response(serializer.data)
