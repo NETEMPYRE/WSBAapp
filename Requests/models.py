@@ -7,6 +7,7 @@ class Request(models.Model):
     AccountNumber = models.TextField()
     PaymentMethod = models.TextField()
     Amount = models.DecimalField(max_digits=10, decimal_places=2)
-    Status = models.TextField()
+    STATUSES = [('Pending', 'Pending'), ('Complete', 'Complete')]
+    Status = models.CharField(max_length=10, choices=STATUSES, default='Pending')
     def __str__(self):
         return f"Request {self.id} By User {self.PlayerID}"
