@@ -5,8 +5,8 @@ import requests
 # Register your models here.
 @admin.register(Request)
 class RequestAdmin(admin.ModelAdmin):
-    list_display = ('id', 'DateTime', 'PlayerID', 'AccountTitle', 'AccountNumber', 'PaymentMethod', 'Amount', 'Status')
-    search_fields = ('PlayerID', 'AccountTitle', 'PaymentMethod')
+    list_display = ('id', 'DateTime', 'PlayFabID', 'AccountTitle', 'AccountNumber', 'PaymentMethod', 'Amount', 'Status')
+    search_fields = ('PlayFabID', 'AccountTitle', 'PaymentMethod')
     list_filter = ('Status', 'PaymentMethod')
         
     def save_model(self, request, obj, form, change):
@@ -15,10 +15,10 @@ class RequestAdmin(admin.ModelAdmin):
             secret_key = "HZ64KEB18OMNYBNM3P45N98WI5BHUCR6SINKS9TDQ6A4Z8FW37"
             url = f"https://{title_id}.playfabapi.com/Server/ExecuteCloudScript"
             payload = {
-                "PlayFabId": obj.PlayerID,
+                "PlayFabId": obj.PlayFabID,
                 "FunctionName": "WithdrawalStatus",
                 "FunctionParameter": {
-                    "PlayFabId": obj.PlayerID,
+                    "PlayFabId": obj.PlayFabID,
                     "Status": obj.Status,
                 },
                 "GeneratePlayStreamEvent": True

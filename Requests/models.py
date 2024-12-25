@@ -2,7 +2,7 @@ from django.db import models
 
 class Request(models.Model):
     DateTime = models.DateTimeField(auto_now_add=True)
-    PlayerID = models.TextField()
+    PlayFabID = models.TextField()
     AccountTitle = models.TextField()
     AccountNumber = models.TextField()
     PaymentMethod = models.TextField()
@@ -10,4 +10,4 @@ class Request(models.Model):
     STATUSES = [('Pending', 'Pending'), ('Complete', 'Complete')]
     Status = models.CharField(max_length=10, choices=STATUSES, default='Pending')
     def __str__(self):
-        return f"Request {self.id} By User {self.PlayerID}"
+        return f"Request {self.id} By User {self.PlayFabID}"
