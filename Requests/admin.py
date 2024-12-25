@@ -5,7 +5,7 @@ import requests
 # Register your models here.
 @admin.register(Request)
 class RequestAdmin(admin.ModelAdmin):
-    list_display = ('id', 'DateTime', 'PlayFabID', 'AccountTitle', 'AccountNumber', 'PaymentMethod', 'Amount', 'Status')
+    list_display = ('id', 'DateTime', 'RequestID', 'PlayFabID', 'AccountTitle', 'AccountNumber', 'PaymentMethod', 'Amount', 'Status')
     search_fields = ('PlayFabID', 'AccountTitle', 'PaymentMethod')
     list_filter = ('Status', 'PaymentMethod')
         

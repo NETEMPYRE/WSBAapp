@@ -2,6 +2,7 @@ from django.db import models
 
 class Request(models.Model):
     DateTime = models.DateTimeField(auto_now_add=True)
+    RequestID = models.TextField()
     PlayFabID = models.TextField()
     AccountTitle = models.TextField()
     AccountNumber = models.TextField()
