@@ -16,9 +16,10 @@ class RequestAdmin(admin.ModelAdmin):
             url = f"https://{title_id}.playfabapi.com/Server/ExecuteCloudScript"
             payload = {
                 "PlayFabId": obj.PlayFabID,
-                "FunctionName": "WithdrawalStatus",
+                "FunctionName": "UpdateWithdrawalRequestStatus",
                 "FunctionParameter": {
-                    "PlayFabId": obj.PlayFabID,
+                    "PlayFabID": obj.PlayFabID,
+                    "RequestID": obj.RequestID,
                     "Status": obj.Status,
                 },
                 "GeneratePlayStreamEvent": True
