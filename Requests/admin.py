@@ -32,7 +32,7 @@ class RequestAdmin(admin.ModelAdmin):
                 response = requests.post(url, json=payload, headers=headers)
                 response_data = response.json()
                 if response.status_code == 200:
-                    self.message_user(request, f"Status Updated Successfully!{response_data}")
+                    self.message_user(request, f"Status Updated Successfully! {response_data}")
                 else:
                     self.message_user(
                         request,
